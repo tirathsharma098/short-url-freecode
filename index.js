@@ -73,7 +73,6 @@ app.get("/api/shorturl/:requestShortUrl", (req, res) => {
     for (const [key, value] of Object.entries(urlMainData)) {
         if (Number(value) === Number(requestShortUrl)) urlFound = key;
     }
-    console.log(urlFound);
     if (!urlFound)
         return res
             .status(400)
