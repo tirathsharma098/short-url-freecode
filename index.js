@@ -33,7 +33,7 @@ function validURL(stringGot) {
 app.post("/api/shorturl", (req, res) => {
     const requestUrl = req.body.url;
     const isValidUrl = validURL(requestUrl);
-    if (!isValidUrl) return res.status(400).json({ error: "invalid url" });
+    if (!isValidUrl) return res.status(400).json({ error: "Invalid URL" });
     const urlMainData = JSON.parse(fs.readFileSync("./url_data.json", "utf8"));
     let urlCount;
     for (const currentUrl in urlMainData) {
